@@ -1,0 +1,33 @@
+nav{
+    background-color: #eaeaea;
+    height: 38px;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.renk-siyah{
+    background-color: #058fa1;
+    color: #fff;
+    font-size: 15px;
+    font-family: 'Courier New', Courier, monospace;
+   
+    /* sadece soldan 20px iç boşluk */
+    padding-left: 20px;
+     /* sadece sağdan 20px iç boşluk */
+    padding-right: 20px;
+     /* sadece üstten 20px iç boşluk */
+    padding-top: 20px;
+    /* sadece alttan 20px iç boşluk */
+    padding-bottom: 20px;
+
+    /* her taraftan 20px iç boşluk oluştur */
+    padding: 20px;
+    /* üstten 20px, sağdan 15px, alttan 10px soldan 5px iç boşluk oluştur */
+    padding: 20px 15px 10px 5px;
+    /* üstten 20px, sağdan 15px, alttan 10px iç boşluk oluştur */
+    padding: 20px 15px 10px ;
+    /* üstten ve alttan 10px, sağdan ve soldan 20px iç boşluk oluştur */
+    padding:10px 20px;
+    
+    margin:50px;
+}

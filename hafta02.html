@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="css/hafta2.css">
+    <style>
+        nav{
+            background: green;
+        }
+        #ustmenu a{
+            padding:10px;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        #ustmenu a:hover{
+            background: #000;
+            color: #fff;
+
+        }
+        .hr-title{
+            position: absolute;
+            bottom: 160px;
+            left:500px;
+            background: #000;
+            color: #fff;
+        }
+        label{
+            display: inline-block;
+            width: 150px;
+        }
+        h1{
+            background: #000;
+            color: #ff0;
+        }
+
+        .baslik{
+            background: #07098b;
+            color: rgb(131, 25, 57);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="baslik">A heading here</h1>
+        <p class="renk-siyah">Posted by John Doe</p>
+        <p>Some additional information here</p>
+      </header>
+      <nav id="ustmenu">
+        <a href="/html/">HTML</a>
+        <a href="/css/">CSS</a>
+        <a href="/js/">JavaScript</a>
+        <a href="/python/">Python</a>
+      </nav>
+      <p class="renk-siyah">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique quidem aliquam nam iusto voluptate totam reprehenderit eaque tempore, expedita iste quod itaque eligendi provident velit, id tempora ducimus! Corrupti, obcaecati.
+      </p>
+      <br>
+      <form>
+        <label for="AdSoyad">Ad Soyad</label>
+        <input id="AdSoyad" name="AdSoyad" type="text"><br>
+        <label for="Eposta">E-posta Adresiniz</label>
+        <input id="Eposta" name="Eposta" type="email"><br>
+        <label for="Sifre">Şifre</label>
+        <input id="Sifre" name="Sifre" type="password"><br>
+        <label for="Tarih">Doğum Tarihi</label>
+        <input id="Tarih" name="Tarih" type="date"><br>
+      
+        <label for="GirisYili">Okula Giriş Yılı</label>
+        <input id="GirisYili" name="GirisYili" type="number" min="1990" max="2023" value="1990"><br>
+        <label for="Course">Ders seçiniz</label>
+        <select>
+            <option>Web Programlama</option>
+            <option>Mobil Programlama</option>
+        </select><br>
+        <label for="Fiyat">
+            Fiyat
+        </label>
+        <input type="radio" name="Fiyat" id="Fiyat1"> 150
+        <input type="radio" name="Fiyat" id="Fiyat1"> 250
+        <input type="radio" name="Fiyat" id="Fiyat1"> 350
+        <br><label for="CV">
+            Özgeçmiş
+        </label>
+        <textarea rows="3">adasda</textarea>
+
+    </form>
+
+    <ul style="list-style-type: circle;">
+        <li>Madde 1
+            <ul>
+                <li><a href="#">Black tea</a></li>
+                <li>Green tea</li>
+              </ul>
+        </li>
+        <li>Madde 2
+            <ol start="50">
+                <li>Sıralı Liste 1</li>
+                <li>Sıralı Liste 2</li>
+                <li>Sıralı Liste 3</li>
+                <li>Sıralı Liste 4</li>
+            </ol>
+        </li>
+        <li>Madde 3</li>
+        <li>Madde 4</li>
+        <li>Madde 5</li>
+        <ol>
+            <li>HATA 1</li>
+            <li>HATA 1</li>
+            <li>HATA 1</li>
+            <li>HATA 1</li>
+        </ol>
+    </ul>
+    <hr>
+    <span class="hr-title">
+        MERHABA BİNGÖL
+    </span>
+</body>
+</html>
