@@ -1,0 +1,21 @@
+﻿@model List<Bolum>
+
+<table style="border:1px solid #000">
+    <thead>
+        <tr>
+            <td>No</td>
+            <td>Ad</td>
+            <td>Açıklama</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr style="border:1px solid #000">
+                <td style="border:1px solid #000">@i.No</td>
+                <td style="border:1px solid #000">@i.Ad</td>
+                <td style="border:1px solid #000">@i.Aciklama</td>
+            </tr>
+        }
+    </tbody>
+</table>
