@@ -1,0 +1,26 @@
+﻿@model OduncVM
+
+<form asp-action="Ekle" asp-controller="Ogrenci" method="post">
+    <div class="mb-3">
+        <label asp-for="ogrenci.Ad" class="form-label"></label>
+        <input class="form-control" type="text" asp-for="ogrenci.Ad" />
+    </div>
+    <div class="mb-3">
+        <label asp-for="ogrenci.Soyad" class="form-label"></label>
+        <input class="form-control" type="text" asp-for="ogrenci.Soyad" />
+    </div>
+    @if(Model?.kitaplar?.Count()>0){
+        @foreach (var item in Model.kitaplar)
+        {
+            <div class="form-check my-2">
+                <input id="kurs1" asp-for="ogrenci.SecilenKitap" class="form-check-input" type="radio" value="YDS-YÖKDİL" />
+                <label class="form-check-label" for="kurs1">@item.Ad</label>
+            </div>
+        }
+    }
+      
+    <div class="mb-3 btn-group">
+        <button class="btn btn-primary" type="submit">Kaydet</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-secondary">İptal</a>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+﻿@model List<Ogrenci>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ad Soyad</th>
+            <th>Seçilen Kitap</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.TamAd</td>
+                <td>@item.SecilenKitap</td>
+            </tr>
+        }
+    </tbody>
+</table>

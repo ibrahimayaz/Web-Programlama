@@ -1,0 +1,23 @@
+﻿@model List<Kitap>
+<div class="display-3">
+    Kitap Listesi
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Resim</th>
+            <th>Ad</th>
+            <th>Yazar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td><img src="@item.ImageUrl" style="width:50px; height:auto" /></td>
+                <td>@item.Ad</td>
+                <td>@item.Yazar</td>
+            </tr>
+        }
+    </tbody>
+</table>

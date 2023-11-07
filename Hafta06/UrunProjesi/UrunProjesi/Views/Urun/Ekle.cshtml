@@ -1,0 +1,25 @@
+﻿@model Urun
+
+
+<form asp-action="Ekle" asp-controller="Urun" method="post">
+    <div class="text-danger" asp-validation-summary="All"></div>
+    <div class="from-group">
+        <label class="form-label">Ad</label>
+        <input class="form-control" type="text" asp-for="Ad" />
+    </div>
+    <div class="from-group">
+        <label class="form-label">Fiyat</label>
+        <input class="form-control" type="number" asp-for="Fiyat" />
+    </div>
+    <div class="from-group">
+        <label class="form-label">Resim Yolu</label>
+        <input class="form-control" type="text" asp-for="ImageUrl" />
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="checkbox" asp-for="BoykotDurumu">
+        <label class="form-check-label">
+            Boykot Durumu
+        </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

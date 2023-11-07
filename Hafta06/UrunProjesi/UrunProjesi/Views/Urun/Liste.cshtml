@@ -1,0 +1,28 @@
+﻿@model List<Urun>
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col col-lg-3">
+            <div class="card" style="min-width: 18rem;">
+                <img src="@item.ImageUrl" class="card-img-top" alt="@item.Ad">
+                <div class="card-body">
+                    <h5 class="card-title">@item.Ad</h5>
+                    @if (item.BoykotDurumu)
+                    {
+                        <span class="badge text-lg-center text-danger">
+                            Bu ürün boykutlu almayınız !
+                        </span>
+                    }
+                    else
+                    {
+                        <span class="badge text-lg-center text-success">
+                            Bu ürün boykutlu değil, alabilirsiniz !
+                        </span>
+                    }
+                    <span class="urun-fiyati">@item.Fiyat TL</span>
+                </div>
+            </div>
+        </div>
+    }
+</div>
