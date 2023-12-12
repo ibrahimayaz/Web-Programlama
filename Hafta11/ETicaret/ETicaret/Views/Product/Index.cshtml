@@ -1,0 +1,12 @@
+﻿@model List<Product>
+
+@foreach (var item in Model)
+{
+    <div class="card">
+        <div class="card-image">
+            No-Image
+        </div>
+        <span class="card-title">@item.Name</span>
+        <span class="card-description">@item.Description</span>
+    </div>
+}
