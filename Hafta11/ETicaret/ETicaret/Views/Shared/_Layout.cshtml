@@ -11,11 +11,16 @@
 </head>
 <body>
     <partial name="_Menu" />
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+        <div class="row">
+            <div class="col-lg-3"><vc:category-list></vc:category-list></div>
+            <div class="col-lg-9">
+            <div class="container">
+                <main role="main" class="pb-3">
+                    @RenderBody()
+                </main>
+            </div>
+            </div>
+        </div>
     @RenderSection("Resimler",  required:false)
     <footer class="border-top footer text-muted">
         <div class="container">

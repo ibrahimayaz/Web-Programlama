@@ -17,18 +17,38 @@ namespace ETicaret.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.0")
+                .HasAnnotation("ProductVersion", "6.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("ETicaret.Models.Product", b =>
+            modelBuilder.Entity("ETicaret.Models.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Category");
+                });
+
+            modelBuilder.Entity("ETicaret.Models.Entities.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
@@ -45,7 +65,63 @@ namespace ETicaret.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Product");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CategoryId = 1,
+                            CreatedDate = new DateTime(2023, 12, 19, 15, 30, 18, 667, DateTimeKind.Local).AddTicks(5910),
+                            Description = "Amerikan Ürünü BOYKOTLUDUR.",
+                            Name = "Iphone 15 Pro Max",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CategoryId = 3,
+                            CreatedDate = new DateTime(2023, 12, 19, 15, 30, 18, 667, DateTimeKind.Local).AddTicks(5923),
+                            Description = "Kışlık kazak",
+                            Name = "Kazak",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CategoryId = 1,
+                            CreatedDate = new DateTime(2023, 12, 19, 15, 30, 18, 667, DateTimeKind.Local).AddTicks(5925),
+                            Description = "Çin ürünüdür.",
+                            Name = "Xioami Mi 10T Pro",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CategoryId = 2,
+                            CreatedDate = new DateTime(2023, 12, 19, 15, 30, 18, 667, DateTimeKind.Local).AddTicks(5926),
+                            Description = "Çin ürünüdür.",
+                            Name = "Yağ 5 LT",
+                            Quantity = 10
+                        });
+                });
+
+            modelBuilder.Entity("ETicaret.Models.Entities.Product", b =>
+                {
+                    b.HasOne("ETicaret.Models.Entities.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
+                });
+
+            modelBuilder.Entity("ETicaret.Models.Entities.Category", b =>
+                {
+                    b.Navigation("Products");
                 });
 #pragma warning restore 612, 618
         }
