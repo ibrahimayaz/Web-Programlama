@@ -68,44 +68,6 @@ namespace ETicaret.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("Product");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 12, 19, 15, 30, 18, 667, DateTimeKind.Local).AddTicks(5910),
-                            Description = "Amerikan Ürünü BOYKOTLUDUR.",
-                            Name = "Iphone 15 Pro Max",
-                            Quantity = 10
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CategoryId = 3,
-                            CreatedDate = new DateTime(2023, 12, 19, 15, 30, 18, 667, DateTimeKind.Local).AddTicks(5923),
-                            Description = "Kışlık kazak",
-                            Name = "Kazak",
-                            Quantity = 10
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CategoryId = 1,
-                            CreatedDate = new DateTime(2023, 12, 19, 15, 30, 18, 667, DateTimeKind.Local).AddTicks(5925),
-                            Description = "Çin ürünüdür.",
-                            Name = "Xioami Mi 10T Pro",
-                            Quantity = 10
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CategoryId = 2,
-                            CreatedDate = new DateTime(2023, 12, 19, 15, 30, 18, 667, DateTimeKind.Local).AddTicks(5926),
-                            Description = "Çin ürünüdür.",
-                            Name = "Yağ 5 LT",
-                            Quantity = 10
-                        });
                 });
 
             modelBuilder.Entity("ETicaret.Models.Entities.Product", b =>

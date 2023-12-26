@@ -1,0 +1,31 @@
+﻿@model ProductVM
+<div class="card card-primary">
+    <div class="card-header">
+        <h3 class="card-title">Ürün Ekleme Sayfası</h3>
+    </div>
+
+
+    <form asp-action="Add" asp-controller="Product" asp-area="Admin" method="post">
+        <div class="card-body">
+             <div class="form-group">
+                <label asp-for="CategoryId">Kategori</label>
+                <select asp-for="CategoryId" asp-items="@Model.CategoryList"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name">Ürünün Adı</label>
+                <input type="text" class="form-control" asp-for="Name">
+            </div>
+            <div class="form-group">
+                <label asp-for="Description">Ürünün Açıklaması</label>
+                <input type="text" class="form-control" asp-for="Description">
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity">Miktar</label>
+                <input type="number" class="form-control" asp-for="Quantity">
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">Ekle</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+﻿@model List<Product>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Ürün Adı</th>
+            <th>Ürün Açıklaması</th>
+            <th>Ürün Miktar</th>
+            <th>Kategory</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var i in Model)
+        {
+            <tr>
+                <td>@i.Name</td>
+                <td>@i.Description</td>
+                <td>@i.Quantity</td>
+                <td>@i.CategoryId</td>
+                <td>
+                    <a href="~/Admin/Product/Update?id=@i.Id" class="btn btn-primary">Düzenle</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
